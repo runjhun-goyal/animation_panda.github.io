@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <style>
+        .body
+        {
+            margin: 0px;
+        }
+        .sun
+        {
+            width: 100%;
+            height: 800px;
+            background-image: url("sun3.png");
+            background-size: cover;
+            position: absolute;
+            background-repeat: repeat-x;
+            overflow: hidden;
+            background-position: center; 
+        }
+        .ground
+        {
+            width: 500%;
+            height: 95px;
+            background-image: url("ground2.png");
+            z-index: 1;
+            position: absolute;
+            bottom:0px;
+            display: block;
+            animation: ground 10s linear infinite;
+        }
+        @keyframes ground
+       {
+           100%
+           {
+               transform: translateX(-3400px);
+           }
+       }
+        .boy 
+        {
+            background-image: url("boy2.png");
+            position: absolute;
+            width: calc(1536px/6);
+            height: 256px;
+            left: 40%;
+            bottom: -70px;
+            z-index: 1;
+            display: block;
+            transform: translate(-50%,-50%);
+            animation: boyanimation 2s steps(6) infinite;
+        }
+        @keyframes boyanimation
+        {
+            from
+            {
+                background-position: 0;
+            }
+            to 
+            {
+                background-position: -1536px;
+            }
+        }
+        .panda
+        {
+            background-image: url("panda.png");
+            position: absolute;
+            width: calc(1600px/9);
+            height: 149px;
+            left: 60%;
+            bottom: -30px;
+            z-index: 1;
+            display: block;
+            transform: translate(-50%,-50%);
+            animation: pandaanimation 2s steps(9) infinite;
+        }
+        @keyframes pandaanimation
+        {
+            from
+            {
+                background-position: 0;
+            }
+            to 
+            {
+                background-position: 1600px;
+            }
+        }
+    </style>
+</head>
+<body class="body">
+    <div class="sun">
+        <div class="ground"></div>
+        <div class="boy"></div>
+        <div class="panda"></div>
+    </div>
+</body>
+</html>
